@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://i.pinimg.com/originals/b3/08/1d/b3081ddf3af58f3484b4749c4b8b92ba.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0.9;
+}
+
+.signup-form {
+    padding: 30px;
+}
+
+.signup-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-field input {
+    margin-right: 5px;
+}
+
+.checkbox-field label {
+    font-weight: normal;
+}
+
+.signup-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.signup-form button:hover {
+    background-color: #2980b9;
+    animation: bounce 1s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.signup-form a {
+    color: #349
+}
+
+    </style>
+    <div class="container">
+        <div class="signup-form">
+            <h1>Join Our Community!</h1>
+            <form action="{% url "lobby" %}">
+                <div class="input-field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span class="password-strength"></span>  </div>
+                <div class="input-field">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <div class="checkbox-field">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+                </div>
+               <a href="{% url 'lobby' %}">
+                <button type="submit">Sign Up</button>
+               </a>
+            </form>
+        </div> <p>Already have an account? <a href="{% url "my_login" %}">Log In</a></p>
+        <div class="background-image"></div>
+    </div>
+    
+        </script>
+    <script src="script.js"></script>  </body>
+</html>

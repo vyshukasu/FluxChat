@@ -1,0 +1,70 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+        background-image: url("https://i.pinimg.com/originals/b3/08/1d/b3081ddf3af58f3484b4749c4b8b92ba.png");
+        
+    }
+    </style>
+<main>
+
+    <section id="form-container">
+
+        <img id="logo" src="{% static 'images/chat-icon.png' %}"/>
+
+        <div id="welcome-message">
+            <h1>Welcome to FluxChat</h1>
+            <p>A group video calling platform made just for you!</p>
+        </div>
+
+        <form id="form">
+            <div class="field-wrapper">
+
+                <div class="form-field">
+                    <label>Room:</label>
+                    <input name="room" placeholder="Enter a room name..."  style="text-transform:uppercase"/>
+                </div>
+
+                <div class="form-field">
+                    <label>Name:</label>
+                    <input name="name" placeholder="Enter your name..."  style="text-transform:uppercase"/>
+                </div>
+
+                <div class="form-field">
+                    <input type="submit" value="Join Stream" />
+                </div>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script>
+    let form = document.getElementById('form')
+
+    let handleSubmit = async (e) => {
+        e.preventDefault()
+        let room = e.target.room.value.toUpperCase()
+        let name = e.target.name.value
+
+        let response = await fetch(`/get_token/?channel=${room}`)
+        let data = await response.json()
+
+        let UID = data.uid
+        let token = data.token
+
+        sessionStorage.setItem('UID', UID)
+        sessionStorage.setItem('token', token)
+        sessionStorage.setItem('room', room)
+        sessionStorage.setItem('name', name)
+
+        window.open('/room/', '_self')
+    }
+
+
+
+    form.addEventListener('submit', handleSubmit)
+</script>
+
+{% endblock content %}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FluxChat</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/main.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<style>
+    body {
+        background-image: url("https://i.pinimg.com/originals/b3/08/1d/b3081ddf3af58f3484b4749c4b8b92ba.png");
+    }
+    </style>
+<body >
+    {% block content %}
+
+    {% endblock content %}
+</body>
+<!-- <script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.8.0.js' %}"></script> -->
+
+
+</html>

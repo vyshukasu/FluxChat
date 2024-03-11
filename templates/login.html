@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://i.pinimg.com/originals/b3/08/1d/b3081ddf3af58f3484b4749c4b8b92ba.png");
+    background-size: cover;  /* Resize image to cover the container */
+    background-position: center;  /* Center the image within the container */
+    background-repeat: no-repeat;  /* Prevent image repetition */
+    
+}
+
+.container {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0.8;
+}
+
+.login-form {
+    padding: 30px;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-field input {
+    margin-right: 5px;
+}
+
+.checkbox-field label {
+    font-weight: normal;
+}
+
+.login-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.login-form button:hover {
+    background-color: #2980b9;
+    animation: bounce 1s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.login-form a {
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+</style>
+    <div class="container">
+        <div class="login-form">
+            <h1>Welcome Back!</h1>
+            <form action="{% url 'lobby' %}">
+                <div class="input-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="checkbox-field">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button type="submit">Login</button>
+                <a href="register">Forgot Password?</a>
+            </form>
+        </div>
+        <div class="background-image"></div>
+    </div>
+</body>
+</html>
